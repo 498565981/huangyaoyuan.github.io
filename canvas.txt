@@ -1,0 +1,26 @@
+画布加定位
+    canvas{
+        position: relative;
+        pointer-events: none;//加不影响鼠标点击
+    }
+
+
+修改画布大小
+var ww,wh;
+
+function onResize(){
+  ww = canvas.width = 1349;
+  wh = canvas.height = 5000;
+}
+ 
+ 
+ 
+ 修改成page   new出动画的位置
+    hearts.push(new Heart(e.touches[0].pageX, e.touches[0].pageY));
+    hearts.push(new Heart(e.touches[0].pageX, e.touches[0].pageY));
+  }
+  else{
+    hearts.push(new Heart(e.pageX, e.pageY));
+    hearts.push(new Heart(e.pageX, e.pageY));
+  }
+}

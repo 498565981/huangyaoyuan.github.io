@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HelloWorld</title>
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style2.css">
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/myFunction.js"></script>
+
+    <!-- 翻转 -->
+    <link rel="stylesheet" href="./css/demo.css">
+
+    <!-- 翻书 -->
+    <script type="text/javascript" src="js/jquery.min.1.7.js"></script>
+    <script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
+
+    <!-- app展开 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style0.css">
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        @font-face{
+            font-family: "xingkai";
+            src: url(./fonts/行楷.TTF)
+        }
+        @font-face{
+            font-family: "drivers";
+            src: url(./fonts/Drivers.ttf)
+        }
+        #package{
+            width: 1349px;
+            height: 656px;
+            overflow: hidden;
+            position: absolute;
+        }
+        #first{
+            background-image: url("./images/03.jpg");
+            width: 1349px;
+            height: 656px;
+            position: absolute;
+            /* 图片不重复 */
+            background-repeat:no-repeat;
+            background-size: 100%;
+            transition: all 2s;
+        }
+        .nav{
+            position: absolute;
+            top: 655px;
+            height: 55px;
+            width: 1349px;
+            background-color: #000;
+            z-index: 5;
+            /* overflow: hidden; */
+        }
+        .nav ul{
+            margin: 0 auto;
+            width: 600px;
+            height: 55px;
+        }
+        .nav li{
+            height: 55px;
+            width: 100px;
+            float: left;
+            list-style: none;
+            text-align: center;
+            line-height: 55px;
+            color: #fff;
+        }
+        .nav li:hover{
+            background-color:aqua;
+            cursor: pointer;
+        }
+        #touxiang{
+            width: 50px;
+            height: 50px;
+            color: aqua;
+            float: left;
+            font-family: "xingkai";
+            font-size: 24px;
+            text-align: center;
+            line-height: 55px;
+            margin: 0 25px;
+            border-radius: 50%;
+            box-shadow: 5px 5px 5px #fff;
+        }
+        #nav_java{
+            height: 55px;
+            width: 100px;
+            float: left;
+            color: orangered;
+            text-align: center;
+            margin: 5px 0;
+        }
+        #java1{
+            border-bottom: 1px solid rgb(56, 231, 12);
+        }
+        #play{
+            position: absolute;
+            top: 13px;
+            left: 1100px;
+            background-color: yellow;
+            width: 30px;
+            height: 30px;
+            border: none;
+            outline: none;
+            border-radius: 15px;
+        }
+        #play img{
+            width: 22px;
+            height: 22px;
+            border-radius: 11px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+        }
+        #play img:hover{
+            cursor: pointer;
+        }
+        #package h1{
+        font-family: drivers;
+        width: 1000px;
+        height: 100px;
+        position: absolute;
+        top: 20%;
+        left: 23%;
+        font-size: 80px;
+        color:darkmagenta;
+        }
+        #package h3{
+            width: 1000px;
+            height: 100px;
+            position: absolute;
+            top: 60%;
+            left: 30%;
+            font-size: 50px;
+            color: #fff;
+        }
+        #down{
+            font-family: "down";
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            font-size: 80px;
+            color: #fff;
+            left: 50%;
+            top: 550px;
+            text-align: center;
+            line-height: 60px;
+            
+        } 
+        #down::before{
+            content: "\e900";
+        }
+        #down:hover{
+            cursor: pointer;
+        }
+
+
+
+        /* 第二块 */
+        #main{
+            position: relative;
+            width: 1349px;
+            height: 5000px;
+            /* opacity:0.4; */
+            
+        }
+        
+        #nav_main_about{
+            background-image: url("./images/bj1.jpg");
+            width: 1349px;
+            height: 670px;
+            position: absolute;
+            top: 710px;
+            /* 图片不重复 */
+            background-repeat:no-repeat;
+            background-size: 100%;
+            transition: all 2s;
+        }
+        .zhedang{
+            position: absolute;
+            background-color: rgba(255,255,255,0.4);
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width:100%;
+            height: 670px;
+        }
+        #about1,#about2{
+            width: 250px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color:mediumblue;
+        }
+        #about1{
+            margin: 50px auto 0;
+            font-size: 35px;
+            border-bottom: 3px solid #f00;
+        }
+        #about2{
+            margin: -10px auto ;
+        }
+        #about3{
+            background-color:lightgreen;
+            width: 1000px;
+            height: 200px;
+            border-radius: 40px;
+            margin: 30px auto 0;
+        }
+        #about3 #li1,#li2,#li3,#li4{
+            width: 100px;
+            height: 100px;
+            list-style: none;
+            display: inline-block;
+            position: absolute;
+
+            border-radius: 50px;
+            border: 1px solid purple;
+            font-family: "il";
+            font-size: 80px;
+            line-height: 100px;
+            text-align: center;
+        }
+        #li1::before{
+            content: "\e900";
+            font-size: 70px;
+        }
+        #li2::before{
+            content: "\e901";
+        }
+        #li3::before{
+            content: "\e948";
+        }
+        #li4::before{
+            content: "\e976";
+        }
+        #li5,#li6,#li7,#li8{
+            width: 150px;
+            display: inline-block;
+            border: 1px solid #fff;
+            position: absolute;
+
+            list-style: none;
+            transform: rotate(-25deg);
+        }
+        #span1{
+            position: absolute;
+            left: 210px;
+            top: 270px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        #span2{
+            position: absolute;
+            left: 330px;
+            top: 300px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        #span3{
+            position: absolute;
+            left: 460px;
+            top: 270px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        #span4{
+            position: absolute;
+            left: 580px;
+            top: 300px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        #span5{
+            position: absolute;
+            left: 710px;
+            top: 270px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        #span6{
+            position: absolute;
+            left: 830px;
+            top: 300px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        #span7{
+            position: absolute;
+            left: 960px;
+            top: 270px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        #span8{
+            position: absolute;
+            left: 1080px;
+            top: 300px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        #li1{
+            left: 240px;
+            top: 170px;
+        }
+        #li2{
+            left: 490px;
+            top: 170px;
+        }
+        #li3{
+            left: 740px;
+            top: 170px;
+        }
+        #li4{
+            left: 990px;
+            top: 170px;
+        }
+        #li5{
+            left: 220px;
+            top: 300px;
+        }
+        #li6{
+            left: 470px;
+            top: 300px;
+        }
+        #li7{
+            left: 720px;
+            top: 300px;
+        }
+        #li8{
+            left: 970px;
+            top: 300px;
+        }
+        
+        #about4{
+            /* background-color:lightgreen; */
+            width: 1000px;
+            height: 200px;
+            margin: 80px auto 0;
+            border: none;
+            position: relative;
+        }
+        #small1{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border-left: 3px solid #f00;
+            border-top:  3px solid #f00; 
+        }
+        #small2{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 900px;
+            top: 100px;
+            border-right: 3px solid #f00;
+            border-bottom:  3px solid #f00; 
+        }
+        #neirong{
+            /* background-color: #00f; */
+            width: 500px;
+            height: 200px;
+            position: absolute;
+            left: 250px;
+            top: 50px;
+            text-align: center;
+            color:darkred;
+            font-size: 20px;
+            /* line-height: 100px; */
+        }
+        
+
+
+
+
+
+
+
+
+        /* 第三块 */
+        #nav_main_jineng{
+            background-image: url("./images/bj2.jpg");
+            width: 1349px;
+            height: 670px;
+            position: absolute;
+            top: 1380px;
+            /* 图片不重复 */
+            background-repeat:no-repeat;
+            background-size: 100%;
+            transition: all 2s;
+            overflow: hidden;
+        }
+        #aboutjn1,#aboutjn2{
+            width: 250px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color:rgba(119, 119, 7, 0.877);
+        }
+        #aboutjn1{
+            margin: 50px auto 0;
+            font-size: 35px;
+            border-bottom: 3px solid #0ff;
+        }
+        #aboutjn2{
+            margin: -10px auto ;
+        }
+        #aboutjn3{
+            background-color:lightgreen;
+            width: 1200px;
+            height: 100px;
+            margin: 30px auto 0;
+            text-align: center;
+        }
+        #miaoshu{
+            /* background-color: #00f; */
+            position: absolute;
+            width: 460px;
+            height: 300px;
+            text-align: center;
+            top: 250px;
+            color:lime;
+            font-size: 20px;
+        }
+
+
+
+
+
+
+
+
+
+        /* 第四块 */
+        #nav_main_work{
+            background-image: url("./images/bj3.jpeg");
+            width: 1349px;
+            height: 670px;
+            position: absolute;
+            top: 2050px;
+            /* 图片不重复 */
+            background-repeat:no-repeat;
+            background-size: 100%;
+            transition: all 2s;
+        }
+        #aboutgz1,#aboutgz2{
+            width: 250px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color:deeppink;
+        }
+        #aboutgz1{
+            margin: 50px auto 0;
+            font-size: 35px;
+            border-bottom: 3px solid red;
+        }
+        #aboutgz2{
+            margin: -10px auto ;
+        }
+
+        /* 第五块 */
+        #nav_main_zuopin{
+            background-image: url("./images/bj4.png");
+            width: 1349px;
+            height: 670px;
+            position: absolute;
+            top: 2720px;
+            /* 图片不重复 */
+            background-repeat:no-repeat;
+            background-size: 100%;
+            transition: all 2s;
+        }
+        #aboutzp1,#aboutzp2{
+            width: 250px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color:orange;
+        }
+        #aboutzp1{
+            margin: 50px auto 0;
+            font-size: 35px;
+            border-bottom: 3px solid #0f0;
+        }
+        #aboutzp2{
+            margin: -10px auto ;
+        }
+        #more{
+            width: 1200px;
+            height: 30px;
+            position: absolute;
+            top: 600px;
+            left: 75px;
+            text-align: center;
+            border-top: 2px solid #00f;
+            color: #f00;
+            line-height: 30px;
+        }
+
+
+        /* 第六块 */
+        #nav_main_callme{
+            background-image: url("./images/bj5.png");
+            width: 1349px;
+            height: 670px;
+            position: absolute;
+            top: 3390px;
+            /* 图片不重复 */
+            background-repeat:no-repeat;
+            background-size: 100%;
+            transition: all 2s;
+        }
+        #aboutlx1,#aboutlx2{
+            width: 250px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color:maroon;
+        }
+        #aboutlx1{
+            margin: 50px auto 0;
+            font-size: 35px;
+            border-bottom: 3px solid #000;
+        }
+        #aboutlx2{
+            margin: -10px auto ;
+        }
+
+        .declare {
+        width: 1349px;
+        height: 150px;
+        text-align: center;
+        margin-bottom: 50px;
+        transform-style: preserve-3d;
+        perspective: 800
+    }
+
+    .declare p {
+        transition: all 2.5s ease-in-out
+    }
+
+    .declare p.active {
+        transform: rotateY(2turn)
+    }
+
+    .declare h2 {
+        margin: 30px 0;
+        word-spacing: 10px;
+        text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: #000;
+    }
+
+    .declare p span {
+        font: 22px/40px MV Boli;
+        margin-right: 20px;
+        text-shadow: 5px 5px 2px #656565
+    }
+
+    .declare p span:first-of-type {
+        position: absolute;
+        left: 400px;
+        top: 100px;
+        color: red
+    }
+
+    .declare p span:nth-of-type(2) {
+        position: absolute;
+        left: 530px;
+        top: 100px;
+        color: green
+    }
+
+    .declare p span:nth-of-type(3) {
+        position: absolute;
+        left: 660px;
+        top: 100px;
+        color: blue
+    }
+
+    #neirong2{
+        /* background-color: #00f; */
+            width: 500px;
+            height: 200px;
+            margin: 10px auto;
+            position: absolute;
+            left: 425px;
+            top: 350px;
+            text-align: center;
+            color:indigo;
+            font-size: 20px;
+            font-weight: 600;
+    }
+
+    /* 联系我 */
+    #all{
+        height: 500px;
+        width: 200px;
+        position: fixed;
+        top: 100px;
+        left: -205px;
+        border: 2px solid #0ff;
+        background-color:darkgrey;
+    }
+    #tupian{
+        width: 150px;
+        height: 150px;
+        border-radius: 75px;
+        position: relative;
+        left: 20px;
+        top: -10px;
+    }
+    #tupian img{
+        width: 150px;
+        height: 150px;
+        border-radius: 75px;
+    }
+    #big{
+        position: absolute;
+        top: 40px;
+        text-align: center;
+    }
+    #big div{
+        border-top: 1px dashed rgb(255, 0, 106);
+        margin: 2px 0;
+    }
+    #big h1{
+        color:darkorange;
+    }
+    #big h3{
+        color:maroon;
+    }
+    #left{
+        width: 40px;
+        height: 100px;
+        font-size: 25px;
+        font-weight: 800;
+        background-color: #0f0;
+        border-top-right-radius:  10px;
+        border-bottom-right-radius: 10px;
+        text-align: center;
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div id="package">
+        <div id="first">
+        </div> 
+        <h1 class="animated bounceInDown delay-2s">Hello,I'm Hyy</h1> 
+        <h3 class="animated bounceInDown delay-2s">一名逗比的JAVA工程师</h3>
+    </div>
+
+
+    <div class="nav">
+        <div id="touxiang">hyy</div>
+        <div id="nav_java">
+            <div id="java1">resume</div>
+            <div id="java2">JAVA工程师</div>
+        </div>
+        <ul>
+            <li id="one">首页</li>
+            <li id="two">关于我</li>
+            <li id="three">专业技能</li>
+            <li id="four">工作经历</li>
+            <li id="five">我的作品</li>
+            <li id="six">联系我</li>
+        </ul>
+        <div id="music">
+            <audio src="./music/1.mp3" autoplay loop=true id="music1"></audio>    
+        </div>
+        <button id="play" >
+            <img src="./images/zanting.png" alt="" id="play_img" onclick="bf()">
+        </button>
+    </div>
+
+
+    <div id="main">
+            <div class="animated infinite bounce delay-2s " >
+                    <div id="down"></div>
+                </div>
+        <div id="nav_main_about">
+            <div class="zhedang">
+                <h1 id="about1">关于我</h1>
+                <h3 id="about2">-ABOUT ME-</h3>
+                <div id="about3">
+                    <ul>
+                        <li id="li1"></li>
+                        <li id="li2"></li>
+                        <li id="li3"></li>
+                        <li id="li4"></li>
+                        <li id="li5"></li>
+                        <span id="span1">学历</span>
+                        <span id="span2">本科</span>
+                        <li id="li6"></li>
+                        <span id="span3">年龄</span>
+                        <span id="span4">22</span>
+                        <li id="li7"></li>
+                        <span id="span5">坐标</span>
+                        <span id="span6">厦门</span>
+                        <li id="li8"></li>
+                        <span id="span7">状态</span>
+                        <span id="span8">求职</span>   
+                    </ul>
+                </div>
+                <div id="about4">
+                    <div id="small1"></div>
+                    <div id="small2"></div>
+                    <div id="neirong"></div>
+                </div>   
+            </div>
+
+        </div>
+        <div id="nav_main_jineng">
+            <div class="zhedang">
+
+                <!-- /* 翻书 */ -->
+                <div class="flipbook-viewport">
+                    <div class="container">
+                        <div class="flipbook">
+                            <div style="background-image:url(images/01.jpg)">
+                                <h1 id="aboutjn1">JAVA技能</h1>
+                                <h3 id="aboutjn2">-JAVA SKILL-</h3>
+                                <div id="miaoshu"></div>
+                            </div>
+                            <div style="background-image:url(images/02.jpg)"></div>
+                            <div style="background-image:url(images/03.jpg)"></div>
+                            <div style="background-image:url(images/01.jpg)"></div>
+                            <div style="background-image:url(images/02.jpg)"></div>
+                            <div style="background-image:url(images/03.jpg)"></div>
+                            <div style="background-image:url(images/01.jpg)"></div>
+                            <div style="background-image:url(images/02.jpg)"></div>
+                            <div style="background-image:url(images/03.jpg)"></div>
+                            <div style="background-image:url(images/01.jpg)"></div>
+                            <div style="background-image:url(images/02.jpg)"></div>
+                            <div style="background-image:url(images/03.jpg)"></div>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+
+                    function loadApp() {
+                    
+                        // Create the flipbook
+                    
+                        $('.flipbook').turn({
+                                // Width
+                    
+                                width:922,
+                                
+                                // Height
+                    
+                                height:600,
+                    
+                                // Elevation
+                    
+                                elevation: 50,
+                                
+                                // Enable gradients
+                    
+                                gradients: true,
+                                
+                                // Auto center this flipbook
+                    
+                                autoCenter: true
+                    
+                        });
+                    }
+                    
+                    // Load the HTML4 version if there's not CSS transform
+                    
+                    yepnope({
+                        test : Modernizr.csstransforms,
+                        yep: ['js/turn.js'],
+                        nope: ['js/turn.html4.min.js'],
+                        both: ['css/basic.css'],
+                        complete: loadApp
+                    });
+                    
+                    </script>
+            </div>
+        </div>
+        <div id="nav_main_work">
+            <div class="zhedang">
+
+
+                <!-- app展开 -->
+                <div class="container2 startup">
+                        <i class="material-icons back">close
+                                <h3 id="aboutgz2">-EXPERIENCE-</h3>
+                        </i>
+                        <h1 id="aboutgz1">工作经历</h1>
+                        <h3 id="aboutgz2">-EXPERIENCE-</h3>
+                        <div class="ball">
+                            <a href="#!"><i class="material-icons first">looks_one</i></a>
+                            <a href="#!"><i class="material-icons second">looks_two</i></a>
+                            <a href="#!"><i class="material-icons third">looks_3</i></a>
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 width="30px" height="30px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
+                            <polygon fill="#FFFFFF" points="30,14.5 15.5,14.5 15.5,0 14.5,0 14.5,14.5 0,14.5 0,15.5 14.5,15.5 14.5,30 15.5,30 15.5,15.5 
+                                30,15.5 ">
+                            </svg>
+                        </div>	
+                    </div>
+                    
+                    <script src="js/index.js"></script>
+            </div>
+        </div>
+        <div id="nav_main_zuopin">
+            <div class="zhedang">
+                <h1 id="aboutzp1">个人作品</h1>
+                <h3 id="aboutzp2">-DEMO-</h3>
+
+
+            <div class="wrapper">
+                <ul>
+                    <li>
+                        <div class='picBox'>
+                            <div class='show'>
+                                <image height='180px' width='180px' src='images/01.jpg'></image>
+                            </div>
+                            <div class='hide'>
+                                <h3>
+                                    Picture1
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='picBox'>
+                            <div class='show'>
+                                <image height='180px' width='180px' src='images/02.jpg'></image>
+                            </div>
+                            <div class='hide'>
+                                <h3>
+                                    Picture2
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='picBox'>
+                            <div class='show'>
+                                <image height='180px' width='180px' src='images/03.jpg'></image>
+                            </div>
+                            <div class='hide'>
+                                <h3>
+                                    Picture3
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='picBox'>
+                            <div class='show'>
+                                <image height='180px' width='180px' src='images/01.jpg'></image>
+                            </div>
+                            <div class='hide'>
+                                <h3>
+                                    Picture4
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='picBox'>
+                            <div class='show'>
+                                <image height='180px' width='180px' src='images/02.jpg'></image>
+                            </div>
+                            <div class='hide'>
+                                <h3>
+                                    Picture5
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='picBox'>
+                            <div class='show'>
+                                <image height='180px' width='180px' src='images/03.jpg'></image>
+                            </div>
+                            <div class='hide'>
+                                <h3>
+                                    Picture6
+                                </h3>
+                            </div>
+                        </div>
+                    </li>   
+                    <li>
+                        <div class='picBox'>
+                            <div class='show'>
+                                <image height='180px' width='180px' src='images/01.jpg'></image>
+                            </div>
+                            <div class='hide'>
+                                <h3>
+                                    Picture7
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='picBox'>
+                            <div class='show'>
+                                <image height='180px' width='180px' src='images/02.jpg'></image>
+                            </div>
+                            <div class='hide'>
+                                <h3>
+                                    Picture8
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='picBox'>
+                            <div class='show'>
+                                <image height='180px' width='180px' src='images/03.jpg'></image>
+                            </div>
+                            <div class='hide'>
+                                <h3>
+                                    Picture9
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='picBox'>
+                            <div class='show'>
+                                <image height='180px' width='180px' src='images/01.jpg'></image>
+                            </div>
+                            <div class='hide'>
+                                <h3>
+                                    Picture10
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='picBox'>
+                            <div class='show'>
+                                <image height='180px' width='180px' src='images/02.jpg'></image>
+                            </div>
+                            <div class='hide'>
+                                <h3>
+                                    Picture11
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='picBox'>
+                            <div class='show'>
+                                <image height='180px' width='180px' src='images/03.jpg'></image>
+                            </div>
+                            <div class='hide'>
+                                <h3>
+                                    Picture12
+                                </h3>
+                            </div>
+                        </div>
+                    </li>   
+                    </ul>
+                </div>
+                <div id="more">更多作品 待更新...</div>
+            </div>
+        </div>
+    <div id="nav_main_callme">
+        <div class="zhedang">
+            <h1 id="aboutlx1">联系我</h1>
+            <h3 id="aboutlx2">-CONTACT ME-</h3>
+            <div class="declare"><h2>勤奋 好学 百炼成钢</h2>
+            <p class=""><span>DILIGENT</span><span>STUDIOUS</span><span>TEMPERED INTO A STEEL</span></p>
+            </div>
+            <div id="neirong2"></div>
+        </div>
+    </div>
+
+    <div id="all">
+        <div id="left">联系我</div>
+        <div id="big">
+            <div id="tupian"><img src="./images/wx.png" alt=""></div>
+            <div id="name">
+                <h1 id="aboutlxw1">NAME</h1>
+                <h3 id="aboutlxw2">黄曜源</h3>
+            </div>
+            <div id="age">
+                <h1 id="aboutlxw3">AGE</h1>
+                <h3 id="aboutlxw4">22岁</h3>
+            </div>
+            <div id="tel">
+                <h1 id="aboutlxw5">TEL</h1>
+                <h3 id="aboutlxw6">153****2025</h3>
+            </div>
+            <div id="email">
+                <h1 id="aboutlxw7">EMAIL</h1>
+                <h3 id="aboutlxw8">498565981@qq.com</h3>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+
+        
+        // window.onload = function(){
+        //     var audio = document.getElementById("music1");
+        //     audio.play();
+        //     console.log(audio);
+        // }
+   
+        //音乐播放暂停和图标变化
+        var img = document.getElementById("play_img");
+        var flag = false;
+        function bf(){
+            var audio = document.getElementById('music1'); 
+            if(audio.paused){ 
+                                
+                audio.play();// 这个就是播放  
+            }else{
+                audio.pause();// 这个就是暂停
+                
+            }
+        } 
+        $(function(){
+            $("#play_img").on("click",function(){
+                if(flag)
+                {
+                    flag = !flag;
+                    $("#play_img").attr("src","./images/zanting.png");
+                }else{
+                    flag = !flag;
+                    $("#play_img").attr("src","./images/play.png");
+                }    
+            })
+
+            //头像颜色变化
+            $("#touxiang").hover(function(){
+                $("#touxiang").css("color","#f00");
+            },function(){
+                $("#touxiang").css("color","aqua");
+            })
+            
+        
+        //首页图片中心缩放
+        var section = $('#first');
+        var x = true;
+        var index = 1;
+        function polling() {
+        if(x){
+            x=!x;
+            section.css(
+            {
+               
+                transform:"scale(1.1)",
+                
+            }
+            )
+            setTimeout(function(){section.css(
+            {
+                backgroundImage: "url('./images/0"+index+".jpg')"
+            }
+            )
+            index++;
+            if(index == 4)
+            {
+                index = 1;
+            }
+            },2500)
+            }else{
+            x=!x;
+             section.css(
+            {
+               
+                transform:"scale(1)"
+            }
+            )
+            setTimeout(function(){section.css(
+            {
+                backgroundImage: "url('./images/0"+index+".jpg')"
+            }
+            )
+            index++;
+            if(index == 4)
+            {
+                index = 1;
+            }
+            },2500)
+        }
+      
+        setTimeout(polling,2500)
+    }
+    polling();
+        })
+
+        //自动打字
+        $(function(){ 
+            var b = true;
+            $(window).on("scroll",function(){
+                var v =pageYOffset;
+            // var neirong = $("#neirong");
+           
+            var str = "2019年毕业于泉州师范学院软件学院<br>热爱互联网开发，代码强迫症患者<br>具有高效的自主学习能力和问题解析能力<br>大老板快把我收到碗里吧";
+            if(parseInt(v)>550&&parseInt(v)<1150)
+            {
+                if(b)
+                {
+
+                    typewrite(str, 150,"#neirong" );
+                    // console.log("1");
+                    b =false;
+                }
+            }
+
+            // console.log(v);
+            })
+            
+        })
+        $(function(){ 
+            var b = true;
+            $(window).on("scroll",function(){
+                var v =pageYOffset;
+            // var neirong = $("#neirong");
+           
+            var str = "后台开发是一个充满未知乐趣的工作<br>它让我觉得编程是如此的神奇<br>正因为如此才会带给我不断的成就感和不满足的上进心<br>带上我吧，一起去发现更大的世界";
+            if(parseInt(v)>3150&&parseInt(v)<3750)
+            {
+                if(b)
+                {
+
+                    typewrite(str, 150,"#neirong2" );
+                    // console.log("1");
+                    b =false;
+                }
+            }
+
+            // console.log(v);
+            })
+            
+        })
+        
+        $(function(){ 
+            var b = true;
+            $(window).on("scroll",function(){
+                var v =pageYOffset;
+            // var neirong = $("#neirong");
+           
+            var str = "I LOVE JAVA<br>JAVA的知识面非常广泛,<br>吃透它需要具有持之以恒的精神。<br>而在JAVA开发的学习工作中，<br>最重要的就是<br>对于面向对象等核心概念的理解和把握，<br>从而再进一步打开J2EE和数据库等<br>更加丰富多彩的世界大门";
+            if(parseInt(v)>1000&&parseInt(v)<1600)
+            {
+                if(b)
+                {
+
+                    typewrite(str, 150,"#miaoshu" );
+                    // console.log("1");
+                    b =false;
+                }
+            }
+
+            // console.log(v);
+            })
+            
+        })
+
+        $(function(){
+            $("#down").on("click",function(){
+                scrollTo(0,$("#package").outerHeight());
+            })
+            $("#one").on("click",function(){
+                scrollTo(0,0);
+            })
+            $("#two").on("click",function(){
+                scrollTo(0,$("#package").outerHeight()+$(".nav").outerHeight());
+            })
+            $("#three").on("click",function(){
+                scrollTo(0,$("#package").outerHeight()+$(".nav").outerHeight()+$("#nav_main_about").outerHeight());
+            })
+            $("#four").on("click",function(){
+                scrollTo(0,$("#package").outerHeight()+$(".nav").outerHeight()+$("#nav_main_about").outerHeight()+$("#nav_main_jineng").outerHeight());
+            })
+            $("#five").on("click",function(){
+                scrollTo(0,$("#package").outerHeight()+$(".nav").outerHeight()+$("#nav_main_about").outerHeight()+$("#nav_main_jineng").outerHeight()+$("#nav_main_work").outerHeight());
+            })
+            $("#six").on("click",function(){
+                scrollTo(0,$("#package").outerHeight()+$(".nav").outerHeight()+$("#nav_main_about").outerHeight()+$("#nav_main_jineng").outerHeight()+$("#nav_main_work").outerHeight()+$("#nav_main_zuopin").outerHeight());
+            })
+            $(window).on("scroll",function(){
+                var v =pageYOffset;
+                if(v>=$("#package").outerHeight())
+                {
+                    $(".nav").css("position","fixed");
+                    $(".nav").css("top","0");
+                    $(".nav").css("opacity","0.5");
+                    $("#left").css("display","block");
+                }
+                if(v<$("#package").outerHeight())
+                {
+                    $(".nav").css("position","absolute");
+                    $(".nav").css("top","655px");
+                    $(".nav").css("opacity","1");
+                    $("#left").css("display","none");
+                }
+            })
+            $("#all").hover(function(){
+                $("#all").stop().animate({
+                    left:0
+                },500)
+            },function(){
+                $("#all").stop().animate({
+                    left:-205
+                },500)
+            })
+        })
+    </script>
+
+<script src="./js/demo.js"></script>
+
+
+
+
+
+<!-- 背景泡沫画布 -->
+
+<style>
+        #fizz {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 656px;
+          opacity: 0.7;
+          pointer-events:none;
+        }
+        
+</style>
+        
+        <canvas id="fizz"></canvas>
+        
+        <script>
+        (function() {
+          this.Bubble = (function() {
+            class Bubble {
+              constructor(x, y, r, createdAt) {
+                this.x = x;
+                this.y = y;
+                this.r = r;
+                this.createdAt = createdAt;
+              }
+        
+              velocity() {
+                return this.r / 20 * Bubble.MAX_V;
+              }
+        
+              grow(now) {
+                if (!this.rising && this.r <= Bubble.MAX_R) {
+                  return this.r += Bubble.GROWTH_RATE * (now - this.createdAt);
+                }
+              }
+        
+              move(now) {
+                if (this.rising) {
+                  return this.y -= (now - this.startedRisingAt) * this.velocity();
+                }
+              }
+        
+              rise() {
+                if (!this.rising && this.r > 2) {
+                  this.rising = Math.random() < 0.15 * (this.r / Bubble.MAX_R);
+                  if (this.rising) {
+                    return this.startedRisingAt = new Date().getTime();
+                  }
+                }
+              }
+        
+            };
+        
+            Bubble.MAX_R = 20;
+        
+            Bubble.MAX_V = 0.02;
+        
+            Bubble.GROWTH_RATE = 0.00005;
+        
+            return Bubble;
+        
+          }).call(this);
+        
+          this.RisingBubbles = (function() {
+            var rand, randInt;
+        
+            class RisingBubbles {
+              constructor(id, maxBubbles) {
+                var elem, i, j, ref;
+                this.maxBubbles = maxBubbles;
+                this.canvas = document.getElementById(id);
+                elem = $('#' + id);
+                // elem.css('background-color', '#fff');
+                elem.click(() => {
+                  var b, j, len, ref, results, ts;
+                  ts = new Date().getTime();
+                  ref = this.bubbles;
+                  results = [];
+                  for (j = 0, len = ref.length; j < len; j++) {
+                    b = ref[j];
+                    if (!b.rising) {
+                      b.rising = true;
+                      results.push(b.startedRisingAt = ts);
+                    } else {
+                      results.push(void 0);
+                    }
+                  }
+                  return results;
+                });
+                this.canvas.width = this.canvas.clientWidth;
+                this.canvas.height = this.canvas.clientHeight;
+                this.ctx = this.canvas.getContext('2d');
+                this.ctx.fillStyle = '#fff';
+                this.bubbles = [];
+                this.lastFrame = new Date().getTime();
+                for (i = j = 1, ref = randInt(0, this.maxBubbles); 1 <= ref ? j <= ref : j >= ref; i = 1 <= ref ? ++j : --j) {
+                  this.bubbles.push(new Bubble(randInt(0, this.canvas.width), randInt(0, this.canvas.height), rand(0, Bubble.MAX_R), new Date().getTime()));
+                }
+              }
+        
+              draw() {
+                return this.run(new Date().getTime());
+              }
+        
+              run(now) {
+                var bubble, j, len, ref;
+                this.update(now);
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                ref = this.bubbles;
+                for (j = 0, len = ref.length; j < len; j++) {
+                  bubble = ref[j];
+                  this.ctx.moveTo(bubble.x, bubble.y);
+                  this.ctx.beginPath();
+                  this.ctx.arc(bubble.x, bubble.y, bubble.r, 0, 2 * Math.PI);
+                  this.ctx.fill();
+                }
+                return requestAnimationFrame(() => {
+                  return this.run(new Date().getTime());
+                });
+              }
+        
+              update(now) {
+                var b, i, j, k, len, ref, ref1, results;
+                ref = this.bubbles;
+                for (j = 0, len = ref.length; j < len; j++) {
+                  b = ref[j];
+                  b.grow(now);
+                  b.rise();
+                  b.move(now);
+                }
+                this.bubbles = (function() {
+                  var k, len1, ref1, results;
+                  ref1 = this.bubbles;
+                  results = [];
+                  for (k = 0, len1 = ref1.length; k < len1; k++) {
+                    b = ref1[k];
+                    if (b.y + b.r >= 0) {
+                      results.push(b);
+                    }
+                  }
+                  return results;
+                }).call(this);
+                if (this.maxBubbles - this.bubbles.length > 0) {
+                  results = [];
+                  for (i = k = 1, ref1 = randInt(0, this.maxBubbles - this.bubbles.length); 1 <= ref1 ? k <= ref1 : k >= ref1; i = 1 <= ref1 ? ++k : --k) {
+                    results.push(this.bubbles.push(new Bubble(randInt(0, this.canvas.width), randInt(0, this.canvas.height), 1, new Date().getTime())));
+                  }
+                  return results;
+                }
+              }
+        
+            };
+        
+            randInt = function(min, max) {
+              return Math.floor(Math.random() * (max - min) + min);
+            };
+        
+            rand = function(min, max) {
+              return Math.floor(Math.random() * (max - min) + min);
+            };
+        
+            return RisingBubbles;
+        
+          }).call(this);
+        
+          $((function() {
+            var fizz;
+            fizz = new RisingBubbles('fizz', 500);
+            return fizz.draw();
+          }));
+        
+        }).call(this);
+        
+        </script>
+
+
+
+
+<!-- 星星跟随 -->
+<style>.stage {position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 5;pointer-events: none}</style>
+
+<canvas id="stage1" class="stage"></canvas>
+
+<script type="text/javascript" src="js/canvas.js"></script>
+
+</body>
+</html>
